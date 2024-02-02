@@ -16,18 +16,23 @@
 
 package im.vector.app.features.onboarding.ftueauth
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import androidx.preference.PreferenceManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import im.vector.app.BuildConfig
 import im.vector.app.R
 import im.vector.app.core.extensions.incrementByOneAndWrap
 import im.vector.app.core.extensions.setCurrentItem
@@ -37,10 +42,12 @@ import im.vector.app.features.VectorFeatures
 import im.vector.app.features.onboarding.OnboardingAction
 import im.vector.app.features.onboarding.OnboardingFlow
 import im.vector.app.features.settings.VectorPreferences
+import im.vector.app.mcf.common.AppConst
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.system.exitProcess
 
 private const val CAROUSEL_ROTATION_DELAY_MS = 5000L
 private const val CAROUSEL_TRANSITION_TIME_MS = 500L
@@ -100,6 +107,58 @@ class FtueAuthSplashCarouselFragment :
 //            views.loginSplashVersion.debouncedClicks { navigator.openDebug(requireContext()) }
 //        }
         views.splashCarousel.registerAutomaticUntilInteractionTransitions()
+        initEnvironmentSpinner()
+    }
+
+    private fun initEnvironmentSpinner() {
+        if (BuildConfig.DEBUG) {
+            val environments = arrayOf(AppConst.ENVIRONMENT_LIVE,AppConst.ENVIRONMENT_INT2, AppConst.ENVIRONMENT_QA)
+            views.spinnerEnvironment.adapter = ArrayAdapter(requireContext(), R.layout.row_spinner_environment, environments)
+            val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+
+            val selectedEnvironment = prefs.getString(AppConst.ENVIRONMENT, AppConst.ENVIRONMENT_LIVE)
+            var selectedPosition = 0
+            for (position in environments.indices) {
+                if (selectedEnvironment == environments[position]) {
+                    selectedPosition = position
+                    break
+                }
+            }
+            views.spinnerEnvironment.setSelection(selectedPosition, false)
+
+            // set up listener
+            views.spinnerEnvironment.onItemSelectedListener =
+                    object : AdapterView.OnItemSelectedListener {
+                        override fun onNothingSelected(parent: AdapterView<*>?) {
+                            // empty
+                        }
+
+                        override fun onItemSelected(
+                                parent: AdapterView<*>?,
+                                view: View?,
+                                position: Int,
+                                id: Long
+                        ) {
+                            // store selected environment
+                            val selectedKey = (view as TextView).text.toString()
+                            val editor = PreferenceManager.getDefaultSharedPreferences(requireContext()).edit()
+                            editor.putString(AppConst.ENVIRONMENT, selectedKey).commit()
+
+                            // Restart the app
+                            val activity = activity
+                            val pm = activity?.packageManager
+                            if (activity!=null && pm !=null) {
+                                val intent = pm.getLaunchIntentForPackage(activity.packageName)
+                                intent?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                                activity.finishAffinity() // Finishes all activities.
+                                activity.startActivity(intent) // Start the launch activity
+                                exitProcess(0)
+                            }
+                        }
+                    }
+        } else {
+            views.spinnerEnvironment.visibility = View.GONE
+        }
     }
 
     private fun ViewPager2.registerAutomaticUntilInteractionTransitions() {

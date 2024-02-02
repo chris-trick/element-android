@@ -17,6 +17,7 @@
 package im.vector.app.features.onboarding
 
 import android.content.Context
+import androidx.preference.PreferenceManager
 import com.airbnb.mvrx.MavericksViewModelFactory
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -48,6 +49,7 @@ import im.vector.app.features.login.ServerType
 import im.vector.app.features.login.SignMode
 import im.vector.app.features.onboarding.OnboardingAction.AuthenticateAction
 import im.vector.app.features.onboarding.StartAuthenticationFlowUseCase.StartAuthenticationResult
+import im.vector.app.mcf.common.AppConst
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
@@ -68,6 +70,7 @@ import org.matrix.android.sdk.api.failure.isUnrecognisedCertificate
 import org.matrix.android.sdk.api.network.ssl.Fingerprint
 import org.matrix.android.sdk.api.session.Session
 import org.matrix.android.sdk.api.util.BuildVersionSdkIntProvider
+import org.matrix.android.sdk.api.util.appendParamToUrl
 import timber.log.Timber
 import java.util.UUID
 import java.util.concurrent.CancellationException
@@ -850,7 +853,52 @@ class OnboardingViewModel @AssistedInject constructor(
             val authDescription = AuthenticationDescription.Register(provider.toAuthenticationType())
             copy(selectedAuthenticationState = SelectedAuthenticationState(authDescription))
         }
-        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action)
+
+        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action) // TODO: 2/2/24 replace with local JAMZ, need Context
+    }
+
+    fun fetchSsoUrlMCF(context: Context, redirectUrl: String, deviceId: String?, provider: SsoIdentityProvider?, action: SSOAction): String? {
+        setState {
+            val authDescription = AuthenticationDescription.Register(provider.toAuthenticationType())
+            copy(selectedAuthenticationState = SelectedAuthenticationState(authDescription))
+        }
+
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        val selectedEnvironment = prefs.getString(AppConst.ENVIRONMENT, AppConst.ENVIRONMENT_LIVE)
+
+        val homeServerUrlBase = when (selectedEnvironment) {
+            AppConst.ENVIRONMENT_LIVE -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_LIVE
+            AppConst.ENVIRONMENT_INT2 -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_INT2
+            AppConst.ENVIRONMENT_QA -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_QA
+            else -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_LIVE
+        }
+
+        val SSO_REDIRECT_PATH = "/_matrix/client/r0/login/sso/redirect" // from org.matrix.android.sdk.internal.auth.Constants
+        val SSO_REDIRECT_URL_PARAM = "redirectUrl" // from org.matrix.android.sdk.internal.auth.Constants
+
+        return buildString {
+            append(homeServerUrlBase)
+            append(SSO_REDIRECT_PATH)
+            if (provider?.id != null) {
+                append("/${provider.id}")
+            }
+            // Set the redirect url
+            appendParamToUrl(SSO_REDIRECT_URL_PARAM, redirectUrl)
+            deviceId?.takeIf { it.isNotBlank() }?.let {
+                // But https://github.com/matrix-org/synapse/issues/5755
+                appendParamToUrl("device_id", it)
+            }
+
+            // unstable MSC3824 action param
+            appendParamToUrl("org.matrix.msc3824.action", action.toString())
+        }
+
+        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action) // TODO: 2/2/24 replace with local JAMZ, need Context
+    }
+
+    private fun getHomeServerBaseMCF(context: Context) {
+
+
     }
 
     fun getFallbackUrl(forSignIn: Boolean, deviceId: String?): String? {

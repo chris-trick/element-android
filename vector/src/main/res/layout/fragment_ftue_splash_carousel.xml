@@ -122,4 +122,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/michelin_settings_logo" />
 
+    <Spinner
+        android:id="@+id/spinner_environment"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
