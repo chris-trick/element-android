@@ -892,13 +892,6 @@ class OnboardingViewModel @AssistedInject constructor(
             // unstable MSC3824 action param
             appendParamToUrl("org.matrix.msc3824.action", action.toString())
         }
-
-        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action) // TODO: 2/2/24 replace with local JAMZ, need Context
-    }
-
-    private fun getHomeServerBaseMCF(context: Context) {
-
-
     }
 
     fun getFallbackUrl(forSignIn: Boolean, deviceId: String?): String? {
