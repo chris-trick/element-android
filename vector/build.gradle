@@ -71,6 +71,10 @@ android {
             if (project.hasProperty("coverage")) {
                 testCoverageEnabled = coverage == "true"
             }
+            buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
+        }
+        release {
+            buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
         }
     }
 

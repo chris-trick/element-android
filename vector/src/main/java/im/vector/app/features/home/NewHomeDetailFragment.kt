@@ -30,6 +30,7 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
 import com.google.android.material.appbar.AppBarLayout
 import dagger.hilt.android.AndroidEntryPoint
+import im.vector.app.BuildConfig
 import im.vector.app.R
 import im.vector.app.SpaceStateHandler
 import im.vector.app.core.extensions.commitTransaction
@@ -188,9 +189,14 @@ class NewHomeDetailFragment :
                     invalidateOptionsMenu()
                 }
 
-        newHomeDetailViewModel.onEach { viewState ->
-            refreshUnreadCounterBadge(viewState.spacesNotificationCounterBadgeState)
+        if (!BuildConfig.ONE_WAY_BROADCAST) {
+            newHomeDetailViewModel.onEach { viewState ->
+                refreshUnreadCounterBadge(viewState.spacesNotificationCounterBadgeState)
+            }
+        } else {
+            views.spacesUnreadCounterBadge.visibility = View.GONE
         }
+
     }
 
     private fun setupObservers() {
@@ -209,16 +215,18 @@ class NewHomeDetailFragment :
     }
 
     private fun setupFabs() {
-        showFABs()
+        if (!BuildConfig.ONE_WAY_BROADCAST) {
+            showFABs()
 
-        views.newLayoutCreateChatButton.debouncedClicks {
-            newChatBottomSheet.takeIf { !it.isAdded }?.show(requireActivity().supportFragmentManager, NewChatBottomSheet.TAG)
-        }
+            views.newLayoutCreateChatButton.debouncedClicks {
+                newChatBottomSheet.takeIf { !it.isAdded }?.show(requireActivity().supportFragmentManager, NewChatBottomSheet.TAG)
+            }
 
-        views.newLayoutOpenSpacesButton.visibility = View.GONE
+            views.newLayoutOpenSpacesButton.visibility = View.GONE
 //        views.newLayoutOpenSpacesButton.debouncedClicks {
 //            spaceListBottomSheet.takeIf { !it.isAdded }?.show(requireActivity().supportFragmentManager, SpaceListBottomSheet.TAG)
 //        }
+        }
     }
 
     private fun showFABs() {

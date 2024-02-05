@@ -76,7 +76,7 @@
         style="@style/Widget.Vector.Button.Text.Login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Get Started"
+        android:text="@string/mcf_get_started"
         android:textAllCaps="true"
         android:transitionName="loginSubmitTransition"
         app:layout_constraintBottom_toTopOf="@id/loginSplashBottomSpace"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mcf_get_started">Get Started</string>
+    <string name="mcf_server_connect_title">Connect to Michelin Connected Fleet Messaging</string>
+    <string name="mcf_server_connect_subtitle">"Use your existing MCF credentials to log in."</string>
+</resources>

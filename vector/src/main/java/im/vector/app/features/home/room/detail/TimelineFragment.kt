@@ -64,6 +64,7 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
+import im.vector.app.BuildConfig
 import im.vector.app.R
 import im.vector.app.core.animations.play
 import im.vector.app.core.dialogs.ConfirmationDialogBuilder
@@ -301,13 +302,13 @@ class TimelineFragment :
             }
         }
 
-        if (childFragmentManager.findFragmentById(R.id.composerContainer) == null) {
+        if (childFragmentManager.findFragmentById(R.id.composerContainer) == null && !BuildConfig.ONE_WAY_BROADCAST) {
             childFragmentManager.commitTransaction {
                 replace(R.id.composerContainer, MessageComposerFragment())
             }
         }
 
-        if (childFragmentManager.findFragmentById(R.id.voiceMessageRecorderContainer) == null) {
+        if (childFragmentManager.findFragmentById(R.id.voiceMessageRecorderContainer) == null && !BuildConfig.ONE_WAY_BROADCAST) {
             childFragmentManager.commitTransaction {
                 replace(R.id.voiceMessageRecorderContainer, VoiceRecorderFragment())
             }

@@ -65,8 +65,8 @@ class FtueAuthSignUpSignInSelectionFragment :
             // TODO: CHRIS: This is used on the "SSO" sign in option
             ServerType.MatrixOrg -> renderServerInformation(
                     icon = null,
-                    title = "Connect to Michelin Connected Fleet Messaging", // getString(R.string.login_connect_to, state.selectedHomeserver.userFacingUrl.toReducedUrl()),
-                    subtitle = "Use your existing MCF credentials to log in." // getString(R.string.login_server_matrix_org_text)
+                    title = getString(R.string.mcf_server_connect_title),
+                    subtitle = getString(R.string.mcf_server_connect_subtitle)
             )
             ServerType.EMS -> renderServerInformation(
                     icon = R.drawable.ic_logo_element_matrix_services,

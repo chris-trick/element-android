@@ -333,6 +333,45 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980924743358:android:f22f905c4e19aad0f668ef",
+        "android_client_info": {
+          "package_name": "im.vector.app.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
+        },
+        {
+          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.masternaut.SmartDrive.dev"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
