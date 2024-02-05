@@ -854,7 +854,7 @@ class OnboardingViewModel @AssistedInject constructor(
             copy(selectedAuthenticationState = SelectedAuthenticationState(authDescription))
         }
 
-        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action) // TODO: 2/2/24 replace with local JAMZ, need Context
+        return authenticationService.getSsoUrl(redirectUrl, deviceId, provider?.id, action)
     }
 
     fun fetchSsoUrlMCF(context: Context, redirectUrl: String, deviceId: String?, provider: SsoIdentityProvider?, action: SSOAction): String? {
