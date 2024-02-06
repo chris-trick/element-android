@@ -1,375 +1,45 @@
 {
   "project_info": {
-    "project_number": "980924743358",
-    "firebase_url": "https://smarterdriver-131115.firebaseio.com",
-    "project_id": "smarterdriver-131115",
-    "storage_bucket": "smarterdriver-131115.appspot.com"
+    "project_number": "412144912837",
+    "project_id": "mcf-messenger",
+    "storage_bucket": "mcf-messenger.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:ad7e8b683ced929c",
-        "android_client_info": {
-          "package_name": "com.masternaut.connect.rapide"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:1701e66c82f2cbf4f668ef",
-        "android_client_info": {
-          "package_name": "com.masternaut.driverapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:ec247c65ba3c765bf668ef",
-        "android_client_info": {
-          "package_name": "com.masternaut.driverapp.dev"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:087906809e09afe6",
-        "android_client_info": {
-          "package_name": "com.masternaut.smartdrive"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:cc20bab1b387669ff668ef",
-        "android_client_info": {
-          "package_name": "com.masternaut.smartdrive.dev"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-sst97uqsi0pasj3mc88kp7g60kb79nnd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.masternaut.smartdrive.dev",
-            "certificate_hash": "282d1b3bbc595b62db733acc8e262e14f04dfce3"
-          }
-        },
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:f8b86d556029e264",
-        "android_client_info": {
-          "package_name": "com.masternaut.smartdrive.rt"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:a6910b4558b3f943",
-        "android_client_info": {
-          "package_name": "com.masternaut.smarterdriver"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-s93tnfhurlor5b2escmtqla93ls40a0f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.masternaut.smarterdriver",
-            "certificate_hash": "67e355321e070929c755cd1633dd0c56c0282b0d"
-          }
-        },
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:0cde285b7436c1fcf668ef",
+        "mobilesdk_app_id": "1:412144912837:android:e68c61f66f0f0ef556a3ac",
         "android_client_info": {
           "package_name": "im.vector.app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
+          "current_key": "AIzaSyAlfeFep74UxzQ3ypQ94uIDa3GVs3kHw8I"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:980924743358:android:f22f905c4e19aad0f668ef",
+        "mobilesdk_app_id": "1:412144912837:android:9dd509b2e2e386ee56a3ac",
         "android_client_info": {
           "package_name": "im.vector.app.debug"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCpsrFnKIniyqOInzone1qFkcFke0jP3MI"
-        },
-        {
-          "current_key": "AIzaSyBL6INQ0yTRZajDKdJlsg7D0okjCyYCDV4"
+          "current_key": "AIzaSyAlfeFep74UxzQ3ypQ94uIDa3GVs3kHw8I"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "980924743358-591cdan2neo2tu1lova34h46jn30uavt.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "980924743358-0hdlu1fjv3h204jb8jmpuv81r2fuhi6d.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.masternaut.SmartDrive.dev"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
