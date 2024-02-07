@@ -10,6 +10,8 @@ apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlinx-knit'
 apply plugin: 'com.likethesalad.stem'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 if (project.hasProperty("coverage")) {
     apply plugin: 'jacoco'
@@ -377,6 +379,7 @@ dependencies {
     implementation project(':vector')
     implementation project(':vector-config')
     implementation project(':library:core-utils')
+    implementation 'com.google.firebase:firebase-crashlytics:18.6.1'
     debugImplementation project(':library:external:span')
     debugImplementation project(':library:ui-styles')
     implementation libs.dagger.hilt
