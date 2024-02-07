@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "412144912837",
-    "project_id": "mcf-messenger",
-    "storage_bucket": "mcf-messenger.appspot.com"
+    "project_number": "737756105733",
+    "project_id": "mcf-messenger-7f9e2",
+    "storage_bucket": "mcf-messenger-7f9e2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:412144912837:android:e68c61f66f0f0ef556a3ac",
+        "mobilesdk_app_id": "1:737756105733:android:9145e7ec79b4dbf4ac206c",
         "android_client_info": {
           "package_name": "im.vector.app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAlfeFep74UxzQ3ypQ94uIDa3GVs3kHw8I"
+          "current_key": "AIzaSyAben-L42oEiuuqFEKoZJa3Z_pVwkNo0A0"
         }
       ],
       "services": {
@@ -26,7 +26,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:412144912837:android:9dd509b2e2e386ee56a3ac",
+        "mobilesdk_app_id": "1:737756105733:android:bc3a591c2b62d662ac206c",
         "android_client_info": {
           "package_name": "im.vector.app.debug"
         }
@@ -34,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAlfeFep74UxzQ3ypQ94uIDa3GVs3kHw8I"
+          "current_key": "AIzaSyAben-L42oEiuuqFEKoZJa3Z_pVwkNo0A0"
         }
       ],
       "services": {
