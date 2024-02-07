@@ -16,8 +16,8 @@
     <color name="palette_polly">#E64F7A</color>
     <color name="palette_melon">#FF812D</color>
 
-    <!-- Changed to Michelin blue -->
-    <color name="palette_element_green">#27509B</color>
+    <!-- Changed to match custom icon background -->
+    <color name="palette_element_green">#3BB1AF</color>
     <color name="palette_element_orange">#D9B072</color>
     <color name="palette_white">#FFFFFF</color>
     <color name="palette_vermilion">#FF5B55</color>

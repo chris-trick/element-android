@@ -189,13 +189,10 @@ class NewHomeDetailFragment :
                     invalidateOptionsMenu()
                 }
 
-        if (!BuildConfig.ONE_WAY_BROADCAST) {
+
             newHomeDetailViewModel.onEach { viewState ->
                 refreshUnreadCounterBadge(viewState.spacesNotificationCounterBadgeState)
             }
-        } else {
-            views.spacesUnreadCounterBadge.visibility = View.GONE
-        }
 
     }
 
@@ -215,7 +212,7 @@ class NewHomeDetailFragment :
     }
 
     private fun setupFabs() {
-        if (!BuildConfig.ONE_WAY_BROADCAST) {
+        if (BuildConfig.ALLOW_DRIVER_INITIATED_MESSAGE && !BuildConfig.ONE_WAY_BROADCAST) {
             showFABs()
 
             views.newLayoutCreateChatButton.debouncedClicks {

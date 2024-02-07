@@ -249,7 +249,7 @@ android {
         debug {
             applicationIdSuffix ".debug"
             signingConfig signingConfigs.debug
-            resValue "string", "app_name", "Messages [dev]"
+            resValue "string", "app_name", "[DEV] Messages"
 
             if (project.hasProperty("coverage")) {
                 testCoverageEnabled = coverage == "true"
@@ -324,13 +324,13 @@ android {
             buildConfigField "String", "SHORT_FLAVOR_DESCRIPTION", "\"G\""
             buildConfigField "String", "FLAVOR_DESCRIPTION", "\"GooglePlay\""
         }
-
-        fdroid {
-            dimension "store"
-            versionName "${versionMajor}.${versionMinor}.${versionPatch}${getFdroidVersionSuffix()}"
-            buildConfigField "String", "SHORT_FLAVOR_DESCRIPTION", "\"F\""
-            buildConfigField "String", "FLAVOR_DESCRIPTION", "\"FDroid\""
-        }
+//
+//        fdroid {
+//            dimension "store"
+//            versionName "${versionMajor}.${versionMinor}.${versionPatch}${getFdroidVersionSuffix()}"
+//            buildConfigField "String", "SHORT_FLAVOR_DESCRIPTION", "\"F\""
+//            buildConfigField "String", "FLAVOR_DESCRIPTION", "\"FDroid\""
+//        }
 
     }
 

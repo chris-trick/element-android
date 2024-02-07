@@ -71,11 +71,16 @@ android {
             if (project.hasProperty("coverage")) {
                 testCoverageEnabled = coverage == "true"
             }
+            // If true, user cannot reply to any messages, so app becomes a one way broadcast TO drivers
             buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
+            // If true, drivers can initiate a message to any user via the floating action button on the homescreen
+            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "true"
         }
         release {
             buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
+            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "true"
         }
+
     }
 
     compileOptions {
