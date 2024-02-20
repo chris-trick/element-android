@@ -67,6 +67,13 @@
             <action android:name="android.intent.action.VIEW" />
             <data android:mimeType="*/*" />
         </intent>
+
+        <!-- used to launch Smarter Driver app -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="com.masternaut.driverapp.launch" />
+        </intent>
     </queries>
 
     <application android:supportsRtl="true">

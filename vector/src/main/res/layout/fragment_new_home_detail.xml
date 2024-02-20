@@ -101,6 +101,26 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/openSmarterDriver"
+        style="@style/Widget.Vector.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="16dp"
+        android:accessibilityTraversalAfter="@id/newLayoutOpenSpacesButton"
+        android:contentDescription="Smarter Driver"
+        android:src="@drawable/ic_smarter_driver"
+        android:scaleType="centerInside"
+        app:maxImageSize="56dp"
+        android:visibility="gone"
+        app:tint="@color/palette_white"
+        app:backgroundTint="#1e539e"
+        app:layout_constraintBottom_toTopOf="@id/newLayoutOpenSpacesButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:targetApi="lollipop_mr1"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newLayoutOpenSpacesButton"
         style="@style/Widget.Vector.FloatingActionButton"
         android:layout_width="wrap_content"

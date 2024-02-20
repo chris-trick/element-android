@@ -17,6 +17,11 @@
 package im.vector.app.features.home
 
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.content.Intent.CATEGORY_BROWSABLE
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.Intent.FLAG_ACTIVITY_REQUIRE_NON_BROWSER
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -63,6 +68,7 @@ import im.vector.app.features.spaces.SpaceListBottomSheet
 import im.vector.app.features.workers.signout.BannerState
 import im.vector.app.features.workers.signout.ServerBackupStatusAction
 import im.vector.app.features.workers.signout.ServerBackupStatusViewModel
+import im.vector.lib.core.utils.compat.resolveActivityCompat
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.matrix.android.sdk.api.session.crypto.model.DeviceInfo
@@ -230,6 +236,30 @@ class NewHomeDetailFragment :
 //        views.newLayoutOpenSpacesButton.debouncedClicks {
 //            spaceListBottomSheet.takeIf { !it.isAdded }?.show(requireActivity().supportFragmentManager, SpaceListBottomSheet.TAG)
 //        }
+        }
+        handleSmarterDriverFloatingButton()
+    }
+
+    private fun handleSmarterDriverFloatingButton() {
+        if (BuildConfig.SMARTERDRIVER_SHORTCUT) {
+            // use custom schema to launch SD
+            val intent = Intent(ACTION_VIEW, Uri.parse("com.masternaut.driverapp.launch:/app")).apply {
+                // The URL should either launch directly in a non-browser app (if it's the default) or in the disambiguation dialog.
+                addCategory(CATEGORY_BROWSABLE)
+                flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_REQUIRE_NON_BROWSER
+            }
+            // check if there's app installed
+            val canWeStartSD = context?.packageManager?.resolveActivityCompat(intent, intent.flags) != null
+            // it is, show the button and setup click listener
+            if (canWeStartSD) {
+                views.openSmarterDriver.show()
+                views.openSmarterDriver.debouncedClicks {
+                    startActivity(intent)
+                }
+            } else {
+                // no SD installed - hide the button
+                views.openSmarterDriver.hide()
+            }
         }
     }
 
