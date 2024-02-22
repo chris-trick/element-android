@@ -12,19 +12,19 @@
         android:fillColor="#ffffff"/>
     <path
         android:pathData="M-2.25,-2.75l123,0l0,115.51l-123,0z"
-        android:fillColor="#3BB1B0"
+        android:fillColor="@color/mcf_background"
         android:fillType="nonZero"/>
     <path
         android:pathData="M70.86,37.52C62.81,29.45 49.75,29.45 41.7,37.52C34.63,44.6 33.65,55.74 39.34,63.93L39.34,63.93C39.47,64.13 39.53,64.38 39.47,64.63C38.71,68.01 37.08,70.92 34.83,72.83C38.06,72.52 41.55,71.34 44.94,69.86L44.94,69.87C45.19,69.76 45.49,69.76 45.74,69.91C59.32,78.01 76.9,68.28 76.9,52.14C76.9,46.43 74.59,41.26 70.86,37.52Z"
         android:fillColor="#ffffff"/>
     <path
         android:pathData="M47.65,52.5m-2.84,0a2.84,2.84 0,1 1,5.68 0a2.84,2.84 0,1 1,-5.68 0"
-        android:fillColor="#3BB1B0"/>
+        android:fillColor="@color/mcf_background"/>
     <path
         android:pathData="M56.58,52.5m-2.84,0a2.84,2.84 0,1 1,5.68 0a2.84,2.84 0,1 1,-5.68 0"
-        android:fillColor="#3BB1B0"/>
+        android:fillColor="@color/mcf_background"/>
     <path
         android:pathData="M65.5,52.5m-2.84,0a2.84,2.84 0,1 1,5.68 0a2.84,2.84 0,1 1,-5.68 0"
-        android:fillColor="#3BB1B0"/>
+        android:fillColor="@color/mcf_background"/>
   </group>
 </vector>

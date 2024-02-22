@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MCFButton">
+        <item name="background">@drawable/bg_mcf_button</item>
+        <item name="backgroundTint">@color/palette_white</item>
+        <item name="android:textColor">@color/mcf_button_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

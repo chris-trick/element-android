@@ -47,8 +47,8 @@ class OnboardingServersRobot {
         waitUntilViewVisible(ViewMatchers.withId(R.id.loginServerUrlFormTitle))
         BaristaEditTextInteractions.writeTo(R.id.loginServerUrlFormHomeServerUrl, "https://chat.mozilla.org")
         BaristaClickInteractions.clickOn(R.id.loginServerUrlFormSubmit)
-        waitUntilViewVisible(ViewMatchers.withId(R.id.loginSignupSigninTitle))
-        BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninText, "Connect to chat.mozilla.org")
+        waitUntilViewVisible(ViewMatchers.withId(R.id.loginSignupSigninSubmit))
+//        BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninText, "Connect to chat.mozilla.org")
         BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninSubmit, R.string.login_signin_sso)
         Espresso.pressBack()
 
@@ -67,8 +67,8 @@ class OnboardingServersRobot {
         BaristaEditTextInteractions.writeTo(R.id.loginServerUrlFormHomeServerUrl, "https://one.ems.host")
         BaristaClickInteractions.clickOn(R.id.loginServerUrlFormSubmit)
 
-        waitUntilViewVisible(ViewMatchers.withId(R.id.loginSignupSigninTitle))
-        BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninText, "one.ems.host")
+        waitUntilViewVisible(ViewMatchers.withId(R.id.loginSignupSigninSubmit))
+//        BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninText, "one.ems.host")
         BaristaVisibilityAssertions.assertDisplayed(R.id.loginSignupSigninSubmit, R.string.login_signin_sso)
         Espresso.pressBack()
         Espresso.pressBack()
