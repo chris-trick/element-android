@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@null">
+    android:background="@color/mcf_background">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/splashCarousel"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        app:layout_constraintBottom_toTopOf="@id/loginSplashButtonsSpace"
+        app:layout_constraintBottom_toTopOf="@id/loginSplashAlreadyHaveAccount"
         app:layout_constraintTop_toBottomOf="@id/splashCarouselFloatingSection"
         app:layout_constraintVertical_chainStyle="spread"
         app:tabBackground="@drawable/indicator_onboarding_carousel_selector"
@@ -48,41 +48,39 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/ftue_auth_gutter_end_percent" />
 
-    <Space
-        android:id="@+id/loginSplashButtonsSpace"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/loginSplashSubmit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.01"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carouselIndicator" />
 
     <Button
         android:id="@+id/loginSplashSubmit"
-        style="@style/Widget.Vector.Button.Login"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="320dp"
         android:textAllCaps="true"
         android:transitionName="loginSubmitTransition"
-        app:layout_constraintBottom_toTopOf="@id/loginSplashAlreadyHaveAccount"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="@id/splashCarouselGutterEnd"
         app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"
-        app:layout_constraintTop_toBottomOf="@id/loginSplashButtonsSpace"
+        app:layout_constraintTop_toBottomOf="@id/loginSplashAlreadyHaveAccount"
+        style="@style/MCFButton"
+        android:textStyle="bold"
+        android:background="@drawable/bg_mcf_button"
         tools:text="@string/login_splash_create_account" />
 
     <Button
         android:id="@+id/loginSplashAlreadyHaveAccount"
-        style="@style/Widget.Vector.Button.Text.Login"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="320dp"
         android:text="@string/mcf_get_started"
         android:textAllCaps="true"
+        android:layout_marginTop="32dp"
         android:transitionName="loginSubmitTransition"
-        app:layout_constraintBottom_toTopOf="@id/loginSplashBottomSpace"
         app:layout_constraintEnd_toEndOf="@id/splashCarouselGutterEnd"
         app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"
-        app:layout_constraintTop_toBottomOf="@id/loginSplashSubmit" />
+        app:layout_constraintTop_toBottomOf="@id/messages"
+        style="@style/MCFButton"
+        android:textStyle="bold"
+        android:background="@drawable/bg_mcf_button"
+        />
 
     <Space
         android:id="@+id/loginSplashBottomSpace"
@@ -103,30 +101,44 @@
         android:textColor="?vctr_content_secondary"
         android:visibility="gone"
         app:drawableStartCompat="@drawable/ic_debug_icon"
-        app:drawableTint="?colorPrimary"
+        app:drawableTint="?vctr_content_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/splashCarouselGutterEnd"
         app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"
         tools:text="@string/settings_version"
         tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/messages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/messages"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/palette_white"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/michelin_settings_logo" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@id/messages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_call_back_to_chat" />
 
     <Spinner
         android:id="@+id/spinner_environment"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:foregroundTint="@color/palette_white"
         app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"
         app:layout_constraintTop_toTopOf="parent" />
 

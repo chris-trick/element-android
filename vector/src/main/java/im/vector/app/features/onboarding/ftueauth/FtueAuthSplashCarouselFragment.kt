@@ -17,13 +17,17 @@
 package im.vector.app.features.onboarding.ftueauth
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -69,6 +73,22 @@ class FtueAuthSplashCarouselFragment :
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.mcf_background)
+
+        // set white icons in status bar
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val controller = activity?.window?.insetsController
+            controller?.setSystemBarsAppearance(0, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            var flags = activity?.window?.decorView?.systemUiVisibility
+            if (flags != null) {
+                flags = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+                activity?.window?.decorView?.systemUiVisibility = flags
+            }
+        }
+
         super.onViewCreated(view, savedInstanceState)
         setupViews()
     }

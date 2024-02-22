@@ -4,19 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:colorBackground">
+    android:background="@color/mcf_background">
 
-    <androidx.core.widget.NestedScrollView style="@style/LoginFormScrollView">
+    <androidx.core.widget.NestedScrollView style="@style/LoginFormScrollView"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout style="@style/LoginFormContainer">
 
-            <ImageView
-                style="@style/LoginLogo"
-                app:layout_constraintEnd_toEndOf="parent"
+            <TextView
+                android:id="@+id/messages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/messages"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/palette_white"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription"
-                android:visibility="invisible"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/LoginLogo"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="64dp"
+                app:layout_constraintBottom_toTopOf="@id/messages"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_call_back_to_chat" />
 
             <ImageView
                 android:id="@+id/loginSignupSigninServerIcon"
@@ -39,6 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="27dp"
                 android:textColor="?vctr_content_primary"
+                android:visibility="gone"
+                tools:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loginSignupSigninServerIcon"
                 app:layout_goneMarginTop="0dp"
@@ -52,6 +74,8 @@
                 android:layout_marginTop="27dp"
                 android:gravity="start"
                 android:textColor="?vctr_content_secondary"
+                android:visibility="gone"
+                tools:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loginSignupSigninTitle"
@@ -60,13 +84,15 @@
             <!-- Sign up or sign in SSO -->
             <Button
                 android:id="@+id/loginSignupSigninSubmit"
-                style="@style/Widget.Vector.Button.Login"
-                android:layout_width="0dp"
+                style="@style/MCFButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:minWidth="320dp"
                 android:layout_marginTop="38dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/loginSignupSigninText"
+                app:layout_constraintTop_toBottomOf="@id/messages"
+                android:background="@drawable/bg_mcf_button"
                 tools:text="@string/login_signup" />
 
             <!-- Sign in or gone -->
@@ -82,7 +108,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loginSignupSigninSubmit"
-                tools:visibility="visible" />
+                />
 
             <!-- Social Login buttons -->
             <LinearLayout
@@ -96,7 +122,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loginSignupSigninSignIn"
-                tools:visibility="visible">
+                >
 
                 <TextView
                     android:id="@+id/loginSignupSigninSocialLoginHeader"
