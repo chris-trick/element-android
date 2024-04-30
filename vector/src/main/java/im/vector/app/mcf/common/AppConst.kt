@@ -23,6 +23,6 @@ object AppConst {
     const val ENVIRONMENT_INT2 = "INT2"
     const val ENVIRONMENT_QA = "QA"
     const val ENVIRONMENT_LIVE_HOME_SERVER_BASE_LIVE = "https://matrix-test.daern.org"
-    const val ENVIRONMENT_LIVE_HOME_SERVER_BASE_INT2 = "https://matrix-test.daern.org"
+    const val ENVIRONMENT_LIVE_HOME_SERVER_BASE_INT2 = "https://api.msg-mtx.int.eur.az.mycf.io"
     const val ENVIRONMENT_LIVE_HOME_SERVER_BASE_QA = "https://matrix-test.daern.org.qa"
 }

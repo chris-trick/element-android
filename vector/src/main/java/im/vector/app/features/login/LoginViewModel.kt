@@ -18,6 +18,7 @@ package im.vector.app.features.login
 
 import android.content.Context
 import android.net.Uri
+import androidx.preference.PreferenceManager
 import com.airbnb.mvrx.Fail
 import com.airbnb.mvrx.Loading
 import com.airbnb.mvrx.MavericksViewModelFactory
@@ -34,6 +35,7 @@ import im.vector.app.core.platform.VectorViewModel
 import im.vector.app.core.resources.StringProvider
 import im.vector.app.core.session.ConfigureAndStartSessionUseCase
 import im.vector.app.core.utils.ensureTrailingSlash
+import im.vector.app.mcf.common.AppConst
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.matrix.android.sdk.api.MatrixPatterns.getServerName
@@ -90,7 +92,16 @@ class LoginViewModel @AssistedInject constructor(
     private var lastAction: LoginAction? = null
     private var currentHomeServerConnectionConfig: HomeServerConnectionConfig? = null
 
-    private val matrixOrgUrl = stringProvider.getString(R.string.mcf_org_server_url).ensureTrailingSlash()
+    // Use MCF server based on env in use
+    val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+    val selectedEnvironment = prefs.getString(AppConst.ENVIRONMENT, AppConst.ENVIRONMENT_LIVE)
+
+    var matrixOrgUrl = when (selectedEnvironment) {
+        AppConst.ENVIRONMENT_LIVE -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_LIVE
+        AppConst.ENVIRONMENT_INT2 -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_INT2
+        AppConst.ENVIRONMENT_QA -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_QA
+        else -> AppConst.ENVIRONMENT_LIVE_HOME_SERVER_BASE_LIVE
+    }
 
     val currentThreePid: String?
         get() = registrationWizard?.getCurrentThreePid()

@@ -5,7 +5,7 @@
 
     <!-- server urls -->
     <string name="matrix_org_server_url" translatable="false">https://matrix.org</string>
-    <string name="mcf_org_server_url" translatable="false">https://matrix-test.daern.org</string>
+    <string name="mcf_org_server_url" translatable="false">https://api-matrix.mfc.org</string> <!-- Set this to the final public API URL when available -->
 
     <!-- Rageshake configuration -->
     <string name="bug_report_url" translatable="false">https://riot.im/bugreports/submit</string>
