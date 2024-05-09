@@ -86,7 +86,7 @@ android {
 
             // Enable the create chat button, ie allow a user to send a direct message to any other user.
             // ONE_WAY_BROADCAST also has to be false for this to work as otherwise they can't enter text.
-            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "true"
+            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "false"
 
             // Enable a button that will open up Smarter Driver app
             buildConfigField "boolean", "SMARTERDRIVER_SHORTCUT", "true"
@@ -95,7 +95,7 @@ android {
             buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
             buildConfigField "boolean", "AUTOMATIC_BACKUP_RESTORE", "false"
             buildConfigField "boolean", "HIDE_BACKUP_DIALOG", "true"
-            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "true"
+            buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "false"
             buildConfigField "boolean", "SMARTERDRIVER_SHORTCUT", "true"
         }
     }
