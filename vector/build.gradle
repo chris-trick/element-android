@@ -92,7 +92,7 @@ android {
             buildConfigField "boolean", "SMARTERDRIVER_SHORTCUT", "true"
         }
         release {
-            buildConfigField "boolean", "ONE_WAY_BROADCAST", "false"
+            buildConfigField "boolean", "ONE_WAY_BROADCAST", "true"
             buildConfigField "boolean", "AUTOMATIC_BACKUP_RESTORE", "false"
             buildConfigField "boolean", "HIDE_BACKUP_DIALOG", "true"
             buildConfigField "boolean", "ALLOW_DRIVER_INITIATED_MESSAGE", "true"
